@@ -1,0 +1,58 @@
+@import '../../assets/styles/colors';
+@import '../../assets/styles/spacing';
+
+$spacing-sm: 16px;
+$spacing-lg: 32px;
+
+.product-item-list-container {
+    margin-bottom: $spacing-lg;
+
+    &__item {
+        background-color: white;
+
+        &--separator {
+            margin-left: $spacing-sm;
+            width: calc(100% - 32px);
+            height: 1px;
+            background-color: $light;
+        }
+    }
+}
+
+.product-item-container {
+    padding: $spacing-sm 0;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+
+    &__product-img {
+        padding: 0 $spacing-sm;
+
+        &--img {
+            width: 180px;
+            height: 180px;
+        }
+    }
+
+    &__info {
+        margin-top: $spacing-sm;
+        flex: 1;
+
+        &--price {
+            font-size: 22px;
+        }
+
+        &--description {
+            margin-top: $spacing-lg;
+        }
+
+    }
+
+    &__city {
+        margin-top: $spacing-lg;
+        width: 20%;
+        font-size: 14px;
+        color: $gray-dark;
+    }
+
+}

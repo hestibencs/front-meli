@@ -1,0 +1,12 @@
+@import '../../assets/styles/colors';
+@import '../../assets/styles/spacing';
+
+.breadcrumb-container {
+    padding-top: $spacing-sm;
+    padding-bottom: $spacing-sm;
+
+    &__text {
+        font-size: 14px;
+        color: $gray-dark;
+    }
+}

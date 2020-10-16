@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap-grid.css';
+
 import './index.scss';
-import App from './App';
+import { App } from './router';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
