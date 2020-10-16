@@ -1,11 +1,12 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 import './style.scss';
 
 class ProductItem extends React.Component {
     render() {
         return (
-            <div className="product-item-container">
+            <div onClick={this.props.onClick} className="product-item-container">
                 <div className="product-item-container__product-img">
                     <img
                         className="product-item-container__product-img--img"
@@ -33,37 +34,21 @@ class ProductItem extends React.Component {
 }
 
 class ProductItemList extends React.Component {
+
+    handleClick = e => {
+        e.preventDefault();
+        const { history } = this.props;
+        history.push(`/items/7`);
+    };
+
     render() {
         return (
             <div className="product-item-list-container container">
                 <div className="row">
                     <div className="offset-1 col-10">
                         <div className="product-item-list-container__item">
-                            <ProductItem />
+                            <ProductItem onClick={this.handleClick} />
                             <div className="product-item-list-container__item--separator"></div>
-                        </div>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="offset-1 col-10">
-                        <div className="product-item-list-container__item">
-                            <ProductItem />
-                            <div className="product-item-list-container__item--separator"></div>
-                        </div>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="offset-1 col-10">
-                        <div className="product-item-list-container__item">
-                            <ProductItem />
-                            <div className="product-item-list-container__item--separator"></div>
-                        </div>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="offset-1 col-10">
-                        <div className="product-item-list-container__item">
-                            <ProductItem />
                         </div>
                     </div>
                 </div>
@@ -72,4 +57,4 @@ class ProductItemList extends React.Component {
     }
 }
 
-export default ProductItemList;
+export default withRouter(ProductItemList);

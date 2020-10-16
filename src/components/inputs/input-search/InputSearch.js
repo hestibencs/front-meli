@@ -7,10 +7,15 @@ class InputSearch extends React.Component {
     render() {
         return (
             <div className="input-search-container">
-                <input placeholder="Nunca dejes de buscar" className="input-search-container__input" />
-                <div className="input-search-container__icon">
-                    <img className="input-search-container__icon--img" src={icoSearch} alt="ico search" />
-                </div>
+                <input
+                    placeholder="Nunca dejes de buscar"
+                    className="input-search-container__input"
+                    onChange={this.props.onChange}
+                    value={this.props.value}
+                />
+                <button className="input-search-container__button">
+                    <img className="input-search-container__button--img" src={icoSearch} alt="ico search" />
+                </button>
             </div>
         );
     }

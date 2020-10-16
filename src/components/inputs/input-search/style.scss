@@ -7,7 +7,7 @@
     border-radius: 4px;
 
     &__input {
-        padding: 5px;
+        padding: 5px 5px 5px 16px;
         border: none;
         flex: 1;
 
@@ -16,13 +16,18 @@
         }
     }
  
-    &__icon {
+    &__button {
         display: flex;
         justify-content: center;
         align-items: center;
         background-color: $light;
         padding: 8px;
         cursor: pointer;
+        border: none;
+
+        &:focus {
+            outline: none;
+        }
 
         &--img {
             width: 15px;
