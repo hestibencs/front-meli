@@ -1,0 +1,39 @@
+@import '../../../assets/styles/colors';
+
+.input-search-container {    
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 2px;
+    overflow: hidden;
+
+    &__input {
+        padding: 5px 5px 5px 16px;
+        border: none;
+        flex: 1;
+
+        &:focus {
+            outline: none;
+        }
+    }
+ 
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $light;
+        padding: 8px;
+        cursor: pointer;
+        border: none;
+
+        &:focus {
+            outline: none;
+        }
+
+        &--img {
+            width: 15px;
+        }
+
+    }
+    
+}

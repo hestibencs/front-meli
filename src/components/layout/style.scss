@@ -1,0 +1,18 @@
+@import '../../assets/styles/colors';
+
+.layout-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    &__nav-bar {
+        width: 100%;
+        background-color: $yellow;
+    }
+
+    &__body {
+        flex: 1;
+        width: 100%;
+        background-color: $light;
+    }
+}

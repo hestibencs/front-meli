@@ -1,0 +1,10 @@
+@import '../../assets/styles/colors';
+
+.button-container {
+    border-radius: 4px;
+    width: 100%;
+    background-color: $primary;
+    border: none;
+    padding: 8px 0;
+    color: white;
+}
