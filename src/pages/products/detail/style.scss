@@ -38,6 +38,13 @@
             margin-top: $spacing-lg;
             font-weight: bold;
             font-size: 32px;
+
+            span {
+                font-weight: initial;
+                font-size: 18px;
+                position: absolute;
+                margin-top: 5px;
+            }
         }
 
         &--btn-buy {

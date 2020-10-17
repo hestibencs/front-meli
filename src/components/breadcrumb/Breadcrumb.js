@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from "react-redux";
+
 
 import './style.scss';
 
@@ -8,7 +10,12 @@ class Breadcrumb extends React.Component {
             <div className="breadcrumb-container container">
                 <div className="row">
                     <div className="breadcrumb-container__text offset-1 col-10">
-                        Aqui va texto
+                        {this.props.categories.map((category, index) => {
+                            return (<React.Fragment key={index}>
+                                {this.props.categories.length === index + 1 ?
+                                    <strong>{category}</strong> : `${category} > `}
+                            </React.Fragment>)
+                        })}
                     </div>
                 </div>
             </div>
@@ -16,4 +23,7 @@ class Breadcrumb extends React.Component {
     }
 }
 
-export default Breadcrumb;
+export default
+    connect(({ categories }) => {
+        return { categories };
+    })(Breadcrumb);

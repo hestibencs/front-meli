@@ -27,6 +27,8 @@ $spacing-lg: 32px;
 
     &__product-img {
         padding: 0 $spacing-sm;
+        border-radius: 4px;
+        overflow: hidden;
 
         &--img {
             width: 180px;
@@ -39,7 +41,13 @@ $spacing-lg: 32px;
         flex: 1;
 
         &--price {
+            display: flex;
+            align-items: center;
             font-size: 22px;
+
+            img {
+                margin-left: 8px;
+            }
         }
 
         &--description {

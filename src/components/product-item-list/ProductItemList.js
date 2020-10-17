@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import icoFreeShipping from '../../assets/icons/ic_shipping.png';
 
 import './style.scss';
 
@@ -10,24 +11,21 @@ class ProductItem extends React.Component {
                 <div className="product-item-container__product-img">
                     <img
                         className="product-item-container__product-img--img"
-                        src="https://cdn.jpegmini.com/user/images/slider_puffin_before_mobile.jpg"
+                        src={this.props.item.picture}
                         alt="Imagen Item"
                     />
                 </div>
                 <div className="product-item-container__info">
                     <div className="product-item-container__info--price">
-                        $ 1.980
+                        $ {this.props.item.price.amount.toLocaleString()}
+                        {this.props.item.free_shipping &&
+                            (<img src={icoFreeShipping} alt="ico search" />)}
                     </div>
                     <div className="product-item-container__info--description">
-                        Pajarraco es el que se esta mostrando
-                    </div>
-                    <div className="product-item-container__info--state">
-                        Completo Unico!
+                        {this.props.item.title}
                     </div>
                 </div>
-                <div className="product-item-container__city">
-                    Capital Federal
-                </div>
+                <div className="product-item-container__city"></div>
             </div>
         );
     }
@@ -35,23 +33,28 @@ class ProductItem extends React.Component {
 
 class ProductItemList extends React.Component {
 
-    handleClick = e => {
-        e.preventDefault();
+    handleClick = (id) => {
         const { history } = this.props;
-        history.push(`/items/7`);
+        history.push(`/items/${id}`);
     };
 
     render() {
         return (
             <div className="product-item-list-container container">
-                <div className="row">
-                    <div className="offset-1 col-10">
-                        <div className="product-item-list-container__item">
-                            <ProductItem onClick={this.handleClick} />
-                            <div className="product-item-list-container__item--separator"></div>
+                {this.props.items.map((item, index) => {
+                    return (
+                        <div className="row" key={item.id}>
+                            <div className="offset-1 col-10">
+                                <div className="product-item-list-container__item">
+                                    <ProductItem onClick={() => this.handleClick(item.id)} item={item} />
+                                    {this.props.items.length !== index + 1 && (
+                                        <div className="product-item-list-container__item--separator"></div>
+                                    )}
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    );
+                })}
             </div>
         );
     }
